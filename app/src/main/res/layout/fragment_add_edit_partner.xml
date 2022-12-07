@@ -1,0 +1,855 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp"
+    tools:context=".partner.AddEditPartnerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_firstln"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_firstln"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Primer Apellido"
+                android:inputType="textCapCharacters"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="17dp"
+                tools:text="Sanchez" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_secondln"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_phone"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_secondln"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Segundo Apellido"
+                android:inputType="textCapCharacters"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="17dp"
+                tools:text="Riascos" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/p_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Nombres"
+            android:inputType="textCapCharacters"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="17dp"
+            tools:text="Sanchez Alejandro" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_til_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="Tipo de identificación" />
+
+        <Spinner
+            android:id="@+id/a_spinner_identification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/panel_identification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".55">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_identification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/p_identificacion_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="Cedula - RUC"
+                    android:inputType="text"
+                    tools:text="0923086430" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/validateID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".28"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="Validar"
+            android:textSize="11sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/validateTXT"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight=".30"-->
+<!--            android:paddingTop="2dp"-->
+<!--            android:layout_marginLeft="3dp"-->
+<!--            android:text="Consulta la credencial.\nEn caso de existir y muestra documento NO válida, consultar a sistemas"-->
+<!--            android:textSize="9sp" />-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/til_provincia"
+            style="@style/InputLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+            android:background="@color/white"
+            android:text="Provincia" />
+
+        <TextView
+            android:id="@+id/til_canton"
+            style="@style/InputLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+            android:layout_toRightOf="@id/til_provincia"
+            android:background="@color/white"
+            android:text="Canton" />
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+        <Spinner
+            android:id="@+id/p_provincia"
+            style="@style/AppThemeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+
+            android:contentDescription="Provincia"
+            android:minHeight="48dp" />
+
+        <Spinner
+            android:id="@+id/p_canton"
+            style="@style/AppThemeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+
+            android:layout_toRightOf="@+id/p_provincia"
+            android:contentDescription="Canton"
+            android:minHeight="48dp"
+            android:paddingLeft="5dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ingreso_casa"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/text_casa"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".17"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Casa"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/foto_casa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".15"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:icon="@android:drawable/ic_menu_camera" />
+
+        <Button
+            android:id="@+id/cargar_casa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".15"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <ImageView
+            android:id="@+id/imageViewCasa"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight=".20"
+            android:rotation="180"
+            app:srcCompat="?android:attr/galleryItemBackground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="Tipo de dirección" />
+
+        <Spinner
+            android:id="@+id/a_spinner_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_urbanizacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/p_urbanizacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:hint="Ciudadela / Urbanizacion"
+            android:background="@color/white"
+            android:inputType="textCapCharacters"
+            tools:text="LA JOYA" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_barrio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/p_barrio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:hint="Barrio / Coop"
+            android:background="@color/white"
+            android:inputType="textCapCharacters"
+            tools:text="LA JOYA" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_principal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/p_principal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:hint="Calle Principal"
+            android:background="@color/white"
+            android:inputType="textCapCharacters"
+            tools:text="LA JOYA" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_secundaria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/p_secundaria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:background="@color/white"
+            android:hint="Calle Secundaria"
+            android:inputType="textCapCharacters"
+            tools:text="ONIX" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_etapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/p_etapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:background="@color/white"
+            android:hint="Etapa"
+            android:inputType="textCapCharacters"
+            tools:text="ONIX" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_mz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_mz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Mz"
+                android:inputType="textCapCharacters"
+                tools:text="67" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_lote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_lote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Lote"
+                android:inputType="textCapCharacters"
+                tools:text="67" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_villa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_villa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Villa/Nro"
+                android:inputType="textCapCharacters"
+                tools:text="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_solar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_solar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Solar"
+                android:inputType="textCapCharacters"
+                tools:text="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_piso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_piso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Piso"
+                android:inputType="textCapCharacters"
+                tools:text="67" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_depar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_depar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Departamento"
+                android:inputType="textCapCharacters"
+                tools:text="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_street2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_numberhouse"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_street2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Referencia Domicilio"
+                android:inputType="textCapCharacters"
+                tools:text="Frente a Farmacia" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Tel. Convencional"
+                android:inputType="phone"
+                android:maxLength="12"
+                tools:text="(04)25525785" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_mobile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_phone"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Tel. Celular"
+                android:inputType="phone"
+                android:maxLength="10"
+                tools:text="0996689322" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="EMail"
+                android:inputType="textEmailAddress"
+                tools:text="clientes.dvtv@gmail.com" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nacimiento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_email"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_nacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="false"
+                android:hint="Fecha Nacimiento (YYYY-MM-DD)"
+                android:inputType="textCapCharacters"
+                tools:text="2018-01-01" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="Tipo de servicio" />
+
+        <Spinner
+            android:id="@+id/a_spinner_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/panel1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".85">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cod_cnel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_cod_cnel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Codigo CNEL"
+                android:inputType="text"
+                tools:text="042010007" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_sum_agua"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".45"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/p_sum_agua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="Suministro Agua"
+                    android:inputType="text"
+                    tools:text="042010007" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cod_agua"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_cod_agua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Numero de medidor"
+                android:inputType="phone"
+                tools:text="042010007" />
+        </com.google.android.material.textfield.TextInputLayout>t>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_tipo_otros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_tipo_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Tipo"
+                android:inputType="text"
+                tools:text="042010007" />
+
+        </com.google.android.material.textfield.TextInputLayout>t>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_otros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".45"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Documento"
+                android:inputType="text"
+                tools:text="042010007" />
+        </com.google.android.material.textfield.TextInputLayout>t>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/panel2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".85">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_coordenadas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".40"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_toRightOf="@+id/til_cod_cnel"
+                android:paddingLeft="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/p_coordenadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="Coordenadas"
+                    android:inputType="text"
+                    tools:text="0.850001,-0.8045 " />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/getLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/panel1"
+            android:paddingLeft="10dp"
+            app:icon="@android:drawable/ic_menu_mylocation"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_ref_familiar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_ref_familiar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Referencia Familiar"
+                android:inputType="textCapCharacters"
+                tools:text="Juan Riasco" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_num_ref_familiar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_ref_familiar"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_num_ref_familiar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Numero"
+                android:inputType="phone"
+                android:maxLength="10"
+                tools:text="09977458901" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_refpersonal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_ref_personal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Referencia Personal"
+                android:inputType="textCapCharacters"
+                tools:text="Juan Olivo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_num_ref_personal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_refpersonal"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/p_num_ref_personal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Numero"
+                android:inputType="phone"
+                android:maxLength="10"
+                tools:text="09966458901" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?listPreferredItemHeight"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp">
+
+
+        <TextView
+            android:id="@+id/refer_motive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:textAppearance="?textAppearanceListItem"
+            tools:text="Byron Sanchez" />
+
+        <TextView
+            android:id="@+id/refer_management"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refer_motive"
+            android:text="New Text"
+            android:textAppearance="?textAppearanceListItem"
+            android:justificationMode="inter_word"
+            tools:text="0923086433" />
+
+        <TextView
+            android:id="@+id/refer_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refer_motive"
+            android:layout_toRightOf="@+id/refer_management"
+            android:paddingLeft="18dp"
+            android:textAlignment="textStart"
+            android:textAppearance="?textAppearanceListItem"
+            tools:text="2022/08/18" />
+
+</RelativeLayout>

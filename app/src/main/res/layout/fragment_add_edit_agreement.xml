@@ -1,0 +1,737 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/agreement_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:layout_marginBottom="50dp"
+    tools:context=".agreement.AddEditAgreementActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="5dp"
+        android:text="Información para Pre-Contrato" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/til_partner_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Nombre del Ciente" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/a_partner_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel_partner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/a_partner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".80"
+                    android:background="@color/white"
+                    android:paddingLeft="5dp"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/a_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/a_partner"
+                    android:layout_weight=".15"
+                    android:gravity="right"
+                    android:text="..."
+                    app:icon="@android:drawable/ic_menu_search" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_til_tipocontrato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Tipo de Contrato" />
+
+        <Spinner
+            android:id="@+id/a_spinner_tipocontrato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight=".60"
+            android:background="@drawable/bg_options"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_til_compania"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="Compañia" />
+
+            <Spinner
+                android:id="@+id/a_spinner_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_contrato"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight=".40">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/a_contrato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Contrato a Modificar"
+                android:inputType="textCapCharacters"
+                tools:text="702" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_til_tiposervicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Tipo de Servicio" />
+
+        <Spinner
+            android:id="@+id/a_spinner_tiposervicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_til_tecnologia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Plan" />
+
+
+
+        <Spinner
+            android:id="@+id/a_spinner_tecnologia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:minHeight="48dp"
+            android:paddingLeft="5dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_til_smart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="Smart" />
+
+        <Spinner
+            android:id="@+id/a_spinner_smart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_til_sector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:background="@color/white"
+                android:paddingLeft="5dp"
+                android:text="Sector" />
+
+            <TextView
+                android:id="@+id/txt_til_poste"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_til_sector"
+                android:layout_weight=".50"
+                android:background="@color/white"
+                android:paddingLeft="5dp"
+                android:text="Poste" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/a_spinner_sector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_weight=".50"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Spinner
+                android:id="@+id/a_spinner_poste"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_toRightOf="@+id/a_spinner_sector"
+                android:layout_weight=".50"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_til_nap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="NAP" />
+
+        <Spinner
+            android:id="@+id/a_spinner_nap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_options">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_til_autorizacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:background="@color/white"
+                android:paddingLeft="5dp"
+                android:text="Autorización SRI" />
+
+            <TextView
+                android:id="@+id/txt_til_tipovivienda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_til_autorizacion"
+                android:layout_weight=".50"
+                android:background="@color/white"
+                android:paddingLeft="5dp"
+                android:text="Tipo Vivienda" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/a_spinner_autorizacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_weight=".50"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Spinner
+                android:id="@+id/a_spinner_tipovivienda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_toRightOf="@+id/a_spinner_autorizacion"
+                android:layout_weight="0.5"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_observacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/a_observacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Observaciones"
+            android:inputType="textCapCharacters"
+            tools:text="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/a_paynow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_options"
+            android:paddingStart="34dp"
+            android:paddingEnd="34dp"
+            android:text="Cobrar Instalacion"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_recibe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight=".50">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/a_recibes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Nro Recibo"
+                android:inputType="textCapCharacters"
+                tools:text="702" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_valor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toRightOf="@+id/til_recibe"
+            android:layout_weight=".50"
+            android:paddingLeft="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/a_valors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Valor"
+                android:inputType="numberDecimal"
+                tools:text="25.00" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <!--Bloque de archivos-->
+    <LinearLayout
+        android:id="@+id/ingreso_cedula"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/text_cedula"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Cédula"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button_cedula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:icon="@android:drawable/ic_menu_camera" />
+
+        <Button
+            android:id="@+id/cargar_cedula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <Button
+            android:id="@+id/pdf_cedula"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:icon="?android:attr/actionModeFindDrawable"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <ImageView
+            android:id="@+id/imageViewCedula"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight=".20"
+            android:rotation="180"
+            app:srcCompat="?android:attr/galleryItemBackground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ingreso_cedula_post"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/text_cedula_post"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".26"
+            android:layout_marginTop="0dp"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Cédula atras (opcional)"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/button_cedula_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:icon="@android:drawable/ic_menu_camera" />
+
+        <Button
+            android:id="@+id/cargar_cedula_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <ImageView
+            android:id="@+id/imageViewCedulaPost"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight=".20"
+            android:rotation="180"
+            app:srcCompat="?android:attr/galleryItemBackground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ingreso_planilla"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/text_planilla"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Planilla"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button_planilla"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:icon="@android:drawable/ic_menu_camera" />
+
+        <Button
+            android:id="@+id/cargar_planilla"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <Button
+            android:id="@+id/pdf_planilla"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".10"
+            app:icon="?android:attr/actionModeFindDrawable"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <ImageView
+            android:id="@+id/imageViewPlanilla"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight=".20"
+            android:rotation="180"
+            app:srcCompat="?android:attr/galleryItemBackground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ingreso_casa"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/text_casa"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".17"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Casa"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/foto_casa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".15"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:icon="@android:drawable/ic_menu_camera" />
+
+        <Button
+            android:id="@+id/cargar_casa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".15"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <ImageView
+            android:id="@+id/imageViewCasa"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight=".20"
+            android:rotation="180"
+            app:srcCompat="?android:attr/galleryItemBackground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ingreso_contrato"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/text_contrato"
+            android:layout_marginTop="5dp"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Contrato"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/cargar_contrato"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/text_cedula"
+            android:layout_weight=".30"
+            android:text="Seleccionar archivo"
+            android:textSize="12dp"
+            app:icon="@android:drawable/sym_contact_card"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp" />
+
+        <TextView
+            android:id="@+id/text_nombreContrato"
+            android:layout_marginTop="5dp"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:background="@color/white"
+            android:paddingLeft="5dp"
+            android:text="Archivo..."
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

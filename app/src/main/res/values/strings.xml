@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY version_app "8.2">
+    <!ENTITY date_compile "02-12-2022">
+    ]>
+<resources>
+    <string name="app_name">DVNET for Salesman</string>
+
+    <string name="welcome">Bienvenido</string>
+    <string name="login">Ingresar</string>
+    <string name="hint_url">Dirección Servidor</string>
+    <string name="hint_enterUserName">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="txt_powered_by">DVNET</string>
+    <string name="todo">TODO</string>
+    <string name="menu">Menu</string>
+    <string name="partner">Personas</string>
+    <string name="contract">Contratos</string>
+    <string name="refers">Referidos</string>
+    <string name="barridos">Barridos</string>
+    <string name="search">Consultas</string>
+    <string name="home">Inicio</string>
+    <string name="sincro">Sincronizacion</string>
+    <string name="sincro1">Sincronizacion</string>
+    <string name="send">Enviar información</string>
+    <string name="receive">Recibir información</string>
+    <string name="hint_database">Base Datos</string>
+    <string name="filename">contrato_</string>
+    <string name="button_cedula">camara</string>
+    <string name="version_app">&version_app;</string>
+    <string name="version">Version: &version_app; Fecha Compilacion: &date_compile;</string>
+
+    <string name="search_hint">Search student</string>
+
+    <string-array name="ambiente_array">
+        <item>Producción</item>
+        <item>Local</item>
+        <item>Desarrollo</item>
+    </string-array>
+
+    <string-array name="tipo_documento">
+        <item>APELLIDOS Y NOMBRES</item>
+        <item>CEDULA/RUC</item>
+        <item>MEDIDOR AGUA</item>
+        <item>MEDIDOR CNEL</item>
+        <item>SUMINISTRO AGUA</item>
+        <item>SUMINISTRO CNEL</item>
+    </string-array>
+
+    <string-array name="conf_sale">
+        <item>VENTA EN SEGUIMIENTO</item>
+        <item>VENTA NO CONCRETADA</item>
+        <item>VENTA CONCRETADA</item>
+        <item>NO INTERESADO</item>
+    </string-array>
+
+    <string-array name="customer_management">
+        <item>VISITA</item>
+        <item>LLAMADA</item>
+        <item>PROGRAMAR</item>
+        <item>ATENCION EN OFICINA</item>
+        <item>ENVIO DE CORREO</item>
+        <item>ENVIO DE SMS</item>
+        <item>ENVIO DE WHATSAPP</item>
+        <item>VENTA CONCRETADA</item>
+        <item>VENTA NO CONCRETADA</item>
+        <item>VENTA EN SEGUIMIENTO</item>
+        <item>NO INTERESADO</item>
+    </string-array>
+
+    <string-array name="tipo_contrato">
+        <item>CAMBIO DE PLAN</item>
+        <item>NUEVO</item>
+        <item>REACTIVACION</item>
+    </string-array>
+
+</resources>

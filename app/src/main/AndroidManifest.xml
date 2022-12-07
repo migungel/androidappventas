@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dvnet.agreement">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.Manifest.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Dvnetagreement"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/file_paths" />
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:label="@string/home"
+            android:theme="@style/Theme.Dvnetagreement"></activity>
+        <activity
+            android:name=".partner.PartnerActivity"
+            android:exported="true"
+            android:label="@string/partner"
+            android:theme="@style/Theme.Dvnetagreement"></activity>
+        <activity
+            android:name=".partner.AddEditPartnerActivity"
+            android:exported="true"
+            android:label="@string/partner"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".partner.ReferActivity"
+            android:exported="true"
+            android:label="@string/refers"
+            android:theme="@style/Theme.Dvnetagreement"></activity>
+        <activity
+            android:name=".partner.AddEditReferActivity"
+            android:exported="true"
+            android:label="@string/refers"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".partner.BarridoActivity"
+            android:exported="true"
+            android:label="@string/barridos"
+            android:theme="@style/Theme.Dvnetagreement"></activity>
+        <activity
+            android:name=".partner.AddEditBarridoActivity"
+            android:exported="true"
+            android:label="@string/barridos"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".agreement.AgreementActivity"
+            android:exported="true"
+            android:label="@string/contract"
+            android:theme="@style/Theme.Dvnetagreement"></activity>
+        <activity
+            android:name=".agreement.AddEditAgreementActivity"
+            android:exported="true"
+            android:label="@string/contract"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".agreement.SearchPartnerActivity"
+            android:exported="true"
+            android:label="@string/partner"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".DbMainActivity"
+            android:exported="true"
+            android:label="Sincronizar"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".SingActivity"
+            android:exported="true"
+            android:label="Firmar"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".AgreementPrint"
+            android:exported="true"
+            android:label="Imprimir"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".UserActivity"
+            android:exported="true"
+            android:label="Usuario"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+        <activity
+            android:name=".ConsultaActivity"
+            android:exported="true"
+            android:label="Consultar"
+            android:theme="@style/Theme.Dvnetagreement.NoActionBar"></activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.dvnet.agreement.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>
